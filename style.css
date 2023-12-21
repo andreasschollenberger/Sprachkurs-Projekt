@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    box-sizing: border-box;
+    
+}
+
+/* In diesem Body werden alle 6 HTML Seiten angesprochen*/
+body{ 
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', sans-serif;
+    background-color: rgba(160, 170, 158, 1); 
+}
+
+.smole{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Für alle Buttons*/
+
+button {
+    color: floralwhite;
+    border-radius: 9px;
+}
+
+.input {
+    color: floralwhite;
+    border-radius: 9px;
+    width: 100%;
+    padding: 10px; 
+    
+} 
+
+
+.btn-weiter{
+   background-color: rgba(49, 19, 235, 1);
+   font-size: 20px;
+   
+}
+
+.div-buchen1{
+    display: flex;
+    flex-direction: column; 
+    
+}
+
+.div-zurück-bnt{
+    display: flex;
+    flex-direction: column; 
+    margin: 5px;
+}
+.btn-zurück{
+    background-color: rgba(235, 110, 19, 1);
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.div-zurück-bnt-last{
+    display: flex;
+    flex-direction: column; 
+    margin: 5px;
+}
+
+.btn-zurück-last{
+    background-color: rgb(95, 92, 89);
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.div-home-bnt{
+    display: flex;
+    flex-direction: column; 
+    margin: 5px;
+}
+
+.btn-home{
+    background-color: rgba(10, 169, 16, 1);
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.end-bnt{
+    font-size:20px;
+}
+
+
+/* Das ist die Home Seite*/
+.home-body{
+    background-color: rgba(160, 170, 158, 1);
+}
+
+
+.titel-home{
+    margin-top: 5px;
+}
+
+.titel-home h1{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 45px;
+    font-weight: bolder;
+    
+    
+
+}
+.b-home{
+    margin-top: 5px;
+}
+
+.b-home b{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.img-home{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    
+
+}
+
+#img1{
+    width: 100%;
+    margin-top: 5px;
+}
+
+/*card.html*/
+
+.text{
+    padding: 15px;
+}
+
+.class-text{
+    padding: 15px;
+    display: flex;
+    text-align: center;
+}
+
+.w-text{
+    background-color: rgb(5, 79, 106);
+    margin: 5px;
+}
+
+.w-text p{
+    padding: 15px;
+    color: floralwhite;
+    font-size: 20px;
+}
+
+
+
+/* hier sind alle CSS für die buchen1.html Seite */
+
+
+
+#anrede{
+    background-color: rgba(159, 148, 148, 1);
+    color: floralwhite;
+    border-radius: 9px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+label{
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+#vorname,
+.input1{
+    background-color: rgba(159, 148, 148, 1);
+    color: floralwhite;
+    border-radius: 9px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+#vorname,
+.input1::placeholder{
+    color: floralwhite;
+    font-size: 20px;
+}
+
+
+#nachname{
+    background-color: rgba(159, 148, 148, 1);
+    color: floralwhite;
+    border-radius: 9px;
+    padding: 5px;
+}
+
+#nachname::placeholder{
+    color: floralwhite;
+    font-size: 20px;
+}
+
+
+
+
+.form input,
+.form select {
+    margin-bottom: 25px;
+}
+
+/*buchen2.html*/
+
+.titel-info{
+    font-size: 8px;
+    margin: -45px;
+    margin-left: 0;
+    display: flex;
+    padding: 35px;
+}
+
+.b-info{
+    display: flex;
+    font-size: 20px;
+    padding: 15px;
+}
+
+/* buchen3.html*/
+.titel-fast{
+    display: flex;
+    margin-top: 5px;
+    padding: 15px;
+}
+
+.titel-fast b{
+    font-size: 25px;
+    
+}
+
+.b-fast {
+    padding: 15px;
+    
+}
+
+
+/* Letzte seite */
+.mitteilung{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.end-bnt{
+    background-color: rgba(27, 174, 221, 1);
+}
+
+
+.agb-news{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+
+/*buchen4.html*/
+
+.last{
+    padding: 15px;
+    
+}
+
+.last b{
+    display: flex;
+    justify-content: center;
+}
+
+.last-anrede{
+    padding: 15px;
+    text-align: center;
+}
+
+.last-anrede b{
+    display: flex;
+    font-size: 25px;
+}
+
+#confetti{
+    position: absolute;
+}

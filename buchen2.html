@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weitere Angaben</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="smole">
+        <img src="img/english-smole.png" alt="">
+    </div>
+    <header class="weitere-info">
+        <div class="titel-info">
+            <h1 id="hallo"></h1>
+        </div>
+
+        <div class="b-info">
+            <b>Wir brauchen noch weitere Infos von Ihnen.</b>
+        </div>
+    </header>
+
+    <main>
+        <form action="buchen3.html" id="myForm" name="myForm" class="form" onsubmit="setStore(event)">
+                
+                <label for="geburtstag">Geburtstag:</label>
+                <input class="input input1" id="geburtstag" name="geburtstag" placeholder="tt / mm / yyyy" />
+
+                <label for="adresse">Strasse / Hausnummer:</label>
+                <input class="input input1" type="text" id="adresse" name="adresse" placeholder="Strasse / H-Nr." />
+
+                <label for="ort">PLZ / Ort:</label>
+                <input class="input input1" type="text" id="ort" name="ort" placeholder="PLZ und Ort." />
+    
+                
+                <div class="div-buchen1">
+                    <a href="buchen3.html">
+                        <input class="btn-weiter input" type="submit" value="Weiter" />
+                    </a>
+                </div>
+        </form>
+        
+
+    </main>
+    
+    <div class="div-zurück-bnt">
+        
+            <button onclick="history.back();" class="btn-zurück">Zurück</button>
+        
+    </div>
+
+    <script>
+        let anrede = sessionStorage.getItem("anrede");
+        let nachname = sessionStorage.getItem("nachname");
+        document.getElementById("hallo").innerHTML = `<h1>Hallo ${anrede} ${nachname}</h1>`;
+
+        function setStore(event) {
+            event.preventDefault();
+            let geburtstag = document.getElementById("geburtstag").value;
+            let adresse = document.getElementById("adresse").value;
+            let ort = document.getElementById("ort").value;
+           
+            if (geburtstag && adresse && ort) {
+                sessionStorage.setItem("geburtstag", geburtstag);
+                sessionStorage.setItem("adresse", adresse);
+                sessionStorage.setItem("ort", ort);
+            
+                document.getElementById("myForm").submit();
+            } else {
+                alert("Bitte füllen Sie alle Felder aus!");
+                
+        }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buchen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="smole">
+        <img src="img/english-smole.png" alt="">
+    </div>
+    
+    <header class="home">
+        <div class="titel-home">
+            <h1>Willkommen</h1>
+        </div>
+
+        <div class="b-home">
+            <b>auf der Buchungsseite</b> <b>für Ihr Englisch</b><b>Sprachkurs</b>
+        </div>
+    </header>
+
+    <main>
+        <form action="buchen2.html" id="myForm" name="myForm" class="form" onsubmit="setStore(event)">
+                <label for="anrede">Anrede:</label>
+                <select id="anrede" name="anrede">
+                    <option value="" disabled selected>Bitte wählen</option>
+                    <option value="Frau">Frau</option>
+                    <option value="Herr">Herr</option>
+                </select>
+            
+                <label for="vorname">Vorname:</label>
+                <input class="input input1" type="text" id="vorname" name="vorname" placeholder="Name" />
+
+                <label for="nachname">Nachname:</label>
+                <input class="input input1" type="text" id="nachname" name="nachname" placeholder="Familien Name" />
+
+    
+                <div class="div-buchen1">
+                    
+                        <input class="btn-weiter input" type="submit" value="WEITER" />
+                    
+                </div>
+        </form>
+        
+    </main>
+    
+    <div class="div-zurück-bnt">
+        
+            <button onclick="history.back();" class="btn-zurück input">ZURÜCK</button>
+    
+    </div>
+
+
+    <script>
+        function setStore(event) {
+            event.preventDefault();
+            let anrede = document.getElementById("anrede").value;
+            let vorname = document.getElementById("vorname").value;
+            let nachname = document.getElementById("nachname").value;
+            
+            if (anrede && vorname && nachname) {
+                sessionStorage.setItem("anrede", anrede);
+                sessionStorage.setItem("vorname", vorname);
+                sessionStorage.setItem("nachname", nachname);
+                document.getElementById("myForm").submit();
+                
+                
+            } else {
+                alert("Bitte füllen Sie alle Felder aus!");
+            
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast fertig</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="smole">
+        <img src="img/english-smole.png" alt="">
+    </div>
+    <header class="weitere-info">
+        <div class="titel-fast">
+            <b id="titel-anrede" class="titel-anrede"></b>
+        </div>
+
+        <div class="b-fast">
+            <b>Sie haben es fast geschafft.</b>
+        </div>
+    </header>
+
+    <main>
+        <form action="buchen4.html" id="myForm" name="myForm" class="form" onsubmit="setStore(event)">
+                
+                <label for="email">E-Mail:</label>
+                <input class="input input1" type="email" id="email" name="email" placeholder="muster@test.com" />
+
+                <label for="telefon">Telefon Privat:</label>
+                <input class="input input1" type="text" id="telefon" name="telefon" placeholder="+41 123 23 45" />
+
+                <label for="telefon1">Telefon Geschäft:</label>
+                <input class="input input1" type="text" id="telefon1" name="telefon1" placeholder="+41 123 23 45">
+                
+                <div class="agb-news">
+                    <div class="agb">
+                        <div>
+                            <label for="agb">AGB</label>
+                            <input type="checkbox" id="agb" name="agb" />
+                        </div>
+                    </div>
+
+                    <div class="news">
+                            <div><label for="newslater">Newslater</label></div>
+                            <label>
+                                    <input type="radio" id="ja" name="zustimmung" value="ja" />
+                                    JA
+                                </label>
+                            <label>
+                                <input type="radio" id="nein" name="ablehnung" value="nein" />
+                                    NEIN
+                            </label>
+                    </div>
+                </div>
+        
+            <div class="div-buchen3">
+                <a href="buchen4.html">
+                    <input class="btn-weiter input" type="submit" value="Weiter" />
+                </a>
+            </div>
+        </form>
+
+    </main>
+    
+    <div class="div-zurück-bnt">
+        
+            <button onclick="history.back();" class="btn-zurück">Zurück</button>
+        
+    </div>
+
+    <script>
+        let anrede = sessionStorage.getItem("anrede");
+        let nachname = sessionStorage.getItem("nachname");
+        document.getElementById("titel-anrede").innerHTML = `<b> ${anrede} ${nachname}</b>`;
+
+        function setStore(event) {
+            event.preventDefault();
+            let email = document.getElementById("email").value;
+            let telefon = document.getElementById("telefon").value;
+            let telefon1 = document.getElementById("telefon1").value;
+            let agb = document.getElementById("agb");
+            let ja = document.getElementById("ja");
+            let nein = document.getElementById("nein");
+            
+            if (email && telefon && telefon1 && agb.checked) {
+                if (ja.checked || nein.checked) {
+                sessionStorage.setItem("email", email);
+                sessionStorage.setItem("telefon", telefon);
+                sessionStorage.setItem("telefon1", telefon1);
+                sessionStorage.setItem("agb", agb);
+                sessionStorage.getItem("ja", ja);
+                sessionStorage.getItem("nein", nein);
+                document.getElementById("myForm").submit();
+                }else {
+                
+                alert("Bitte füllen Sie JA oder NEIN aus!");
+                
+            }
+                
+            } else {
+                
+                alert("Bitte füllen Sie alle Felder aus!");
+                
+            }
+        }
+
+    </script>
+</body>
+</html>
