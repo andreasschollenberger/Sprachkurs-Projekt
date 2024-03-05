@@ -26,6 +26,7 @@
                 <label for="email">E-Mail:</label>
                 <input class="input input1" type="email" id="email" name="email" placeholder="muster@test.com" />
 
+
                 <label for="telefon">Telefon Privat:</label>
                 <input class="input input1" type="text" id="telefon" name="telefon" placeholder="+41 123 23 45" />
 
@@ -55,7 +56,7 @@
         
             <div class="div-buchen3">
                 <a href="buchen4.html">
-                    <input class="btn-weiter input" type="submit" value="Weiter" />
+                    <input class="btn-weiter input" onclick="checkEmail()" type="submit" value="Weiter" />
                 </a>
             </div>
         </form>
@@ -93,7 +94,7 @@
                 document.getElementById("myForm").submit();
                 }else {
                 
-                alert("Bitte füllen Sie JA oder NEIN aus!");
+                alert("Bitte füllen Sie bei Newslater JA oder NEIN aus!");
                 
             }
                 
@@ -101,6 +102,21 @@
                 
                 alert("Bitte füllen Sie alle Felder aus!");
                 
+            }
+        }
+
+        function checkEmail() {
+            // Holen Sie sich den Wert des E-Mail-Felds
+            var emailInput = document.getElementById("email").value;
+
+            // Regulärer Ausdruck für die Überprüfung einer gültigen E-Mail-Adresse
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Überprüfen Sie die E-Mail-Adresse mit dem Regulären Ausdruck
+            if (emailRegex.test(emailInput)) {
+                alert("Danke für das Ausfüllen!");
+            } else {
+                alert("Ihre E-Mail-Adresse ist ungültig!");
             }
         }
 

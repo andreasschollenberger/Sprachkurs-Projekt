@@ -65,7 +65,11 @@
                 sessionStorage.setItem("vorname", vorname);
                 sessionStorage.setItem("nachname", nachname);
                 document.getElementById("myForm").submit();
-                
+                if (vorname.length < 3 || nachname.length < 3) {
+                    alert ("Bitte mehr als 3 Buchstaben verwenden!");
+                    return;
+                    // event.preventDefault(value);
+                }
                 
             } else {
                 alert("Bitte füllen Sie alle Felder aus!");
