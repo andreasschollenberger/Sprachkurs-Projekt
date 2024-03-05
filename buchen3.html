@@ -76,18 +76,25 @@
 
         function setStore(event) {
             event.preventDefault();
-            let email = document.getElementById("email").value;
             let telefon = document.getElementById("telefon").value;
             let telefon1 = document.getElementById("telefon1").value;
             let agb = document.getElementById("agb");
             let ja = document.getElementById("ja");
             let nein = document.getElementById("nein");
             
-            if (email && telefon && telefon1 && agb.checked) {
-                if (ja.checked || nein.checked) {
-                sessionStorage.setItem("email", email);
+        
+            if (telefon){
                 sessionStorage.setItem("telefon", telefon);
+            }else {
+                alert("Bitte füllen Sie die Telefonnummer aus!");
+            }
+            if (telefon1) {
                 sessionStorage.setItem("telefon1", telefon1);
+            }else {
+                alert("Bitte füllen Sie die ihre zweite Telefonnummer aus!");
+            }
+            if (agb.checked) {
+                if (ja.checked || nein.checked) {
                 sessionStorage.setItem("agb", agb);
                 sessionStorage.getItem("ja", ja);
                 sessionStorage.getItem("nein", nein);
@@ -114,6 +121,7 @@
 
             // Überprüfen Sie die E-Mail-Adresse mit dem Regulären Ausdruck
             if (emailRegex.test(emailInput)) {
+                sessionStorage.setItem("email", email);
                 alert("Danke für das Ausfüllen!");
             } else {
                 alert("Ihre E-Mail-Adresse ist ungültig!");
